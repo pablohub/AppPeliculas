@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ProyectoAppPeliculas/AppPeliculas/app/src/main/res/layout/activity_peliculas.xml" value="0.10597826086956522" />
+        <entry key="..\:/ProyectoAppPeliculas/AppPeliculas/app/src/main/res/layout/layout_movie_list_item.xml" value="0.1287568306010929" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AppPeliculas/app/src/main/res/drawable/login_background.xml" value="0.151" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AppPeliculas/app/src/main/res/drawable/rounder_corner.xml" value="0.151" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AppPeliculas/app/src/main/res/layout/activity_main.xml" value="0.15534420289855072" />
