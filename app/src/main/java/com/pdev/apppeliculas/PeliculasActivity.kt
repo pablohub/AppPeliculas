@@ -43,7 +43,10 @@ class PeliculasActivity : AppCompatActivity() {
                         val title = items[i].title ?: "N/A"
                         Log.i("Pelicula", "########Title $title" )
                         val urlImage = items[i].backdrop_path ?: ""
-                        var movie = Movie(title, R.drawable.movie, urlImage)
+                        val voteAverage = items[i].vote_average ?: ""
+                        val releaseDate = items[i].release_date ?: ""
+                        val overview = items[i].overview ?: ""
+                        var movie = Movie(title, R.drawable.movie, urlImage, voteAverage.toString(), releaseDate, overview)
                         movieList.add(movie)
                     }
                 }

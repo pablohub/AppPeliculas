@@ -1,5 +1,6 @@
 package com.pdev.apppeliculas
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,12 +28,19 @@ class RecyclerViewMovieAdapter constructor(private val getActivity: PeliculasAct
         holder.tvMovieTitle.text = movieList[position].title
         Glide
             .with(getActivity.baseContext)
-            .load("${Constantes.BASE_URL_IMAGE}${movieList[position].urlIamge}")
+            .load("${Constantes.BASE_URL_IMAGE}${movieList[position].urlImage}")
             .apply(RequestOptions().override(Constantes.IMAGE_ANCHO, Constantes.IMAGE_ALTO))
             .into(holder.ivMovieImg)
         //holder.ivMovieImg.setImageResource(movieList[position].image)
         holder.cardView.setOnClickListener{
             Toast.makeText(getActivity, movieList[position].title, Toast.LENGTH_LONG).show()
+            val intent = Intent(getActivity, PeliculaDetalle::class.java)
+            intent.putExtra("title", movieList[position].title)
+            intent.putExtra("urlImage", movieList[position].urlImage)
+            intent.putExtra("voteAverage", movieList[position].voteAverage)
+            intent.putExtra("releaseDate", movieList[position].releaseDate)
+            intent.putExtra("overview", movieList[position].overview)
+            getActivity.startActivity(intent)
         }
     }
 
