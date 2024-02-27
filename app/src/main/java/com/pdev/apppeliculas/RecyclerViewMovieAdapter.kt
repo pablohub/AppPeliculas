@@ -8,6 +8,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.pdev.apppeliculas.core.Constantes
 import com.pdev.apppeliculas.domain.Movie
 import com.pdev.apppeliculas.domain.Pelicula
 import com.pdev.apppeliculas.domain.Result
@@ -22,7 +25,12 @@ class RecyclerViewMovieAdapter constructor(private val getActivity: PeliculasAct
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.tvMovieTitle.text = movieList[position].title
-        holder.ivMovieImg.setImageResource(movieList[position].image)
+        Glide
+            .with(getActivity.baseContext)
+            .load("${Constantes.BASE_URL_IMAGE}${movieList[position].urlIamge}")
+            .apply(RequestOptions().override(Constantes.IMAGE_ANCHO, Constantes.IMAGE_ALTO))
+            .into(holder.ivMovieImg)
+        //holder.ivMovieImg.setImageResource(movieList[position].image)
         holder.cardView.setOnClickListener{
             Toast.makeText(getActivity, movieList[position].title, Toast.LENGTH_LONG).show()
         }

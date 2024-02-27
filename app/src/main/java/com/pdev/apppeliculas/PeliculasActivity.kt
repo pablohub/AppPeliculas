@@ -42,7 +42,8 @@ class PeliculasActivity : AppCompatActivity() {
                     for (i in 0 until items.count()){
                         val title = items[i].title ?: "N/A"
                         Log.i("Pelicula", "########Title $title" )
-                        var movie = Movie(title, R.drawable.movie) 
+                        val urlImage = items[i].backdrop_path ?: ""
+                        var movie = Movie(title, R.drawable.movie, urlImage)
                         movieList.add(movie)
                     }
                 }
